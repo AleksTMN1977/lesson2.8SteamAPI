@@ -1,11 +1,19 @@
 package pro.sky.jawa.course2.houmwork.lessonexeptions;
 
 
+import org.springframework.stereotype.Service;
 
+@Service
 public class EmployeeService {
-    public static void employeeList(String[] args) {
+    public String addEmployee;
+    public String removeEmployee;
+    public String findEmployee;
 
-        Employee[] employees = new Employee[5];
+    public static final Employee[] employees = new Employee[10];
+
+
+    public static void employeeService(String[] args) {
+
         employees[0] = new Employee("Иван", "Иванов");
         employees[1] = new Employee("Петр", "Петров");
         employees[2] = new Employee("Василий", "Васильев");

@@ -3,7 +3,7 @@ package pro.sky.jawa.course2.houmwork.lessonexeptions;
 import java.util.Objects;
 
 public class Employee {
-    private String firstName;
+    private  String firstName;
     private String lastName;
 
 
