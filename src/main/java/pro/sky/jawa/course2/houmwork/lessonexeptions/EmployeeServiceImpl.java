@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-    private static Employee[] employees = new Employee[10];
+    private static Employee[] employees = new Employee[5];
 
     static {
         employees[0] = new Employee("Иван", "Иванов");
@@ -15,14 +15,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         employees[4] = new Employee("Андрей", "Андреев");
     }
 
-
     public Employee addEmployee(String firstName, String lastName) {
         Employee employee = new Employee(firstName, lastName);
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] == null) {
                 employees[i] = employee;
             }
-
         }
         return employee;
     }
@@ -33,7 +31,6 @@ public class EmployeeServiceImpl implements EmployeeService {
             if (employee.equals(employees[i])) {
                 employees[i] = null;
             }
-
         }
         return employee;
     }
@@ -48,5 +45,3 @@ public class EmployeeServiceImpl implements EmployeeService {
         return null;
     }
 }
-
-
