@@ -1,4 +1,4 @@
-package pro.sky.jawa.course2.houmwork.lessonexeptions;
+package pro.sky.jawa.course2.houmwork.lessonexeptions.data;
 
 import java.util.Objects;
 

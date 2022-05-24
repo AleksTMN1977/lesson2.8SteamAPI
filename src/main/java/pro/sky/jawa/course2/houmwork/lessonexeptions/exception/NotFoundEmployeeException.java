@@ -1,4 +1,4 @@
-package pro.sky.jawa.course2.houmwork.lessonexeptions;
+package pro.sky.jawa.course2.houmwork.lessonexeptions.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
