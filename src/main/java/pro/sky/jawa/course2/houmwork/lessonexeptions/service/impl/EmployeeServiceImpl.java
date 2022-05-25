@@ -24,35 +24,28 @@ public class EmployeeServiceImpl implements EmployeeService {
     ));
 
 
-    public Employee addEmployee(String firstName, String lastName) {
+    public String addEmployee(String firstName, String lastName) {
         Employee employee = new Employee(firstName, lastName);
         employees.add(employee);
-        return employee;
+        return String.valueOf(employee);
     }
 
 
-    public Employee removeEmployee(String firstName, String lastName) {
+    public String removeEmployee(String firstName, String lastName) {
         Employee employee = new Employee(firstName, lastName);
-        for (int i = 0; i < employees.size(); i++) {
-            if (employee.equals(employees.size())) {
-                employees.size() = null;
-                return employee;
-
-            }
-        }
-        throw new NotFoundEmployeeException();
+        employees.remove(employee);
+        return String.valueOf(employee);
 
     }
 
-    public Employee findEmployee(String firstName, String lastName) {
+
+    public String findEmployee(String firstName, String lastName) {
         Employee employee = new Employee(firstName, lastName);
         for (int i = 0; i < employees.size(); i++) {
             if (employee.equals(employees)) {
-                return employee;
+                return String.valueOf(employee);
             }
         }
         throw new NotFoundEmployeeException();
     }
-
-
 }
