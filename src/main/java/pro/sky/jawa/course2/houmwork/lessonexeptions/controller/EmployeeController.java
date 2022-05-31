@@ -1,10 +1,6 @@
 package pro.sky.jawa.course2.houmwork.lessonexeptions.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import pro.sky.jawa.course2.houmwork.lessonexeptions.data.Employee;
+import org.springframework.web.bind.annotation.*;
 import pro.sky.jawa.course2.houmwork.lessonexeptions.service.EmployeeService;
 
 @RestController
@@ -12,6 +8,7 @@ import pro.sky.jawa.course2.houmwork.lessonexeptions.service.EmployeeService;
 public class EmployeeController {
 
     private final EmployeeService employeeService;
+    private Integer id;
 
     public EmployeeController(EmployeeService employeeService) {
 
@@ -25,7 +22,7 @@ public class EmployeeController {
 
     @GetMapping(path = "/add")
     public String addEmployee(@RequestParam("firstName") String firstName,
-                                @RequestParam("lastName") String lastName) {
+                              @RequestParam("lastName") String lastName) {
         return employeeService.addEmployee(firstName, lastName);
     }
 
@@ -37,8 +34,13 @@ public class EmployeeController {
 
     @GetMapping(path = "/find")
     public String findEmployee(@RequestParam("firstName") String firstName,
-                                 @RequestParam("lastName") String lastName) {
+                               @RequestParam("lastName") String lastName) {
         return employeeService.findEmployee(firstName, lastName);
+    }
+
+    @GetMapping(path = "/get/{id}")
+    public String getEmployee(@PathVariable("id") Integer id) {
+        return employeeService.getEmployee(id);
     }
 }
 
