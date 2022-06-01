@@ -37,10 +37,6 @@ public class EmployeeController {
                                @RequestParam("lastName") String lastName) {
         return employeeService.findEmployee(firstName, lastName);
     }
-
-    @GetMapping(path = "/get/{id}")
-    public String getEmployee(@PathVariable("id") Integer id) {
-        return employeeService.getEmployee(id);
-    }
 }
+
 

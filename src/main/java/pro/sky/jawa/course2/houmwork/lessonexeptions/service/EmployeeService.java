@@ -10,5 +10,4 @@ public interface EmployeeService {
 
     String findEmployee(String firstName, String lastName);
 
-    String getEmployee(Integer id);
-}
+ }
