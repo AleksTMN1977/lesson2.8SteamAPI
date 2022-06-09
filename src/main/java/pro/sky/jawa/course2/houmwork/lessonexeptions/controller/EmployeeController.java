@@ -26,15 +26,15 @@ public class EmployeeController {
 
     @GetMapping(path = "/add")
     public Employee addEmployee(@RequestParam("firstName") String firstName,
-                              @RequestParam("lastName") String lastName,
-                              @RequestParam("dep") Integer departament,
-                              @RequestParam("salary") Integer salary) {
+                                @RequestParam("lastName") String lastName,
+                                @RequestParam("dep") Integer departament,
+                                @RequestParam("salary") Integer salary) {
         return employeeService.addEmployee(firstName, lastName, departament, salary);
     }
 
     @GetMapping(path = "/remove")
     public Employee removeEmployee(@RequestParam("firstName") String firstName,
-                                 @RequestParam("lastName") String lastName) {
+                                   @RequestParam("lastName") String lastName) {
         return employeeService.removeEmployee(firstName, lastName);
     }
 
@@ -48,15 +48,16 @@ public class EmployeeController {
     public Employee maxSalary(@RequestParam("departmentId") Integer departamentId) {
         return employeeService.maxSalary(departamentId);
     }
-    @GetMapping("/departments/all/params")
-    public List<Employee> allDepartament(@RequestParam("departmentId")Integer departamentId){
-        return employeeService.allDepartament(departamentId);
-    }
+
     @GetMapping("/departments/all")
-    public Map<Integer, List<Employee>> groupByDepartament(){
+    public Map<Integer, List<Employee>> groupByDepartament() {
         return employeeService.groupByDepartament();
     }
 
+    @GetMapping(value = "/departments/all", params = "departmentId")
+    public List<Employee> allDepartament(@RequestParam("departmentId") Integer departamentId) {
+        return employeeService.allDepartament(departamentId);
+    }
 }
 
 
